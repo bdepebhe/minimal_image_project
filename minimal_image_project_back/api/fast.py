@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+#EDIT the name and/or location of the model
 model = tf.keras.models.load_model('saved_model/my_model')
 
 
@@ -35,6 +36,8 @@ def predict_class(Img: Image):
     decoded = np.frombuffer(decoded, dtype='uint8')
     decoded = decoded.reshape(Img.height, Img.width, Img.channel)[None,:,:,:]
     #predict class
+    
+    #EDIT this part to adapt it to your project
     prediction = model.predict(decoded)[0,0]
     prediction = float(prediction) # the output dtype of the network, np.float32, is not serializable in json
     return {'proba_of_class_1' : prediction}
