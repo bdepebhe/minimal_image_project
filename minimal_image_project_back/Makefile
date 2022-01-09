@@ -1,5 +1,5 @@
 train_model:
-	python -m minimal_image_project_back.train_model.python
+	python -m minimal_image_project_back.train_model
 
 PROJECT_ID=batch662
 IMAGE_NAME = minimal_image_project_image
